@@ -45,4 +45,4 @@ Supports relations, primary keys, blob fields, memo fields
 				& $exePath -f -l $serverName -n $dbName  -s $_.FullName -t sql -e
 			}
  ``` 
- Credit to [Adam Bertrand](http://www.adamtheautomator.com/ "Adam Bertrand - Adam the Automator")
+ Credit to [Adam Bertram](http://www.adamtheautomator.com/ "Adam Bertram - Adam the Automator")

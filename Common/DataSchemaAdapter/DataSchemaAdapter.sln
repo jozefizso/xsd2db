@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSchemaAdapter", "DataSchemaAdapter.csproj", "{E36CD6C6-1220-45C2-9EC0-53FA27C3D2C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xsd2DB", "..\xsd2db\Xsd2DB.csproj", "{284B1392-B457-428C-A4D8-E5E17008D841}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = AddIn
+		ConfigName.1 = Debug
+		ConfigName.2 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E36CD6C6-1220-45C2-9EC0-53FA27C3D2C5}.AddIn.ActiveCfg = Release|.NET
+		{E36CD6C6-1220-45C2-9EC0-53FA27C3D2C5}.AddIn.Build.0 = Release|.NET
+		{E36CD6C6-1220-45C2-9EC0-53FA27C3D2C5}.Debug.ActiveCfg = Debug|.NET
+		{E36CD6C6-1220-45C2-9EC0-53FA27C3D2C5}.Debug.Build.0 = Debug|.NET
+		{E36CD6C6-1220-45C2-9EC0-53FA27C3D2C5}.Release.ActiveCfg = Release|.NET
+		{E36CD6C6-1220-45C2-9EC0-53FA27C3D2C5}.Release.Build.0 = Release|.NET
+		{284B1392-B457-428C-A4D8-E5E17008D841}.AddIn.ActiveCfg = Release|.NET
+		{284B1392-B457-428C-A4D8-E5E17008D841}.AddIn.Build.0 = Release|.NET
+		{284B1392-B457-428C-A4D8-E5E17008D841}.Debug.ActiveCfg = Debug|.NET
+		{284B1392-B457-428C-A4D8-E5E17008D841}.Debug.Build.0 = Debug|.NET
+		{284B1392-B457-428C-A4D8-E5E17008D841}.Release.ActiveCfg = Release|.NET
+		{284B1392-B457-428C-A4D8-E5E17008D841}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

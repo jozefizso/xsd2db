@@ -1,0 +1,657 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Xsd2Db.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Xsd2Db.Data.AdoxDataSchemaAdapter">
+            <summary>
+            Summary description for JetDatabaseCreator.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.Data.AdoxDataSchemaAdapter.TypeMap">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.DeleteCatalog(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.CreateCatalog(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.OpenCatalog(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.#cctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.Create(System.Data.DataSet,System.Boolean)">
+            <summary>
+            Create a new database conforming to the passed schema.
+            </summary>
+            <param name="schema">a DataSet containing the schema</param>
+            <param name="force">overwrite the database if it exists</param>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.Create(System.Data.DataSet,System.Boolean,System.String)">
+            <summary>
+            Create a new database conforming to the passed schema.
+            </summary>
+            <param name="schema">a DataSet containing the schema</param>
+            <param name="force">overwrite the database if it exists</param>
+            <param name="TablePrefix">Adds a prefix to all tables</param>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.Create(System.Data.DataSet,System.Boolean,System.String,System.String)">
+            <summary>
+            Create a new database conforming to the passed schema.
+            </summary>
+            <param name="schema">a DataSet containing the schema</param>
+            <param name="force">overwrite the database if it exists</param>
+            <param name="TablePrefix">Adds a prefix to all tables</param>
+            <param name="DbOwner">Not Implemented yet</param>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.CreateTable(ADOX.Catalog,System.Data.DataTable)">
+            <summary>
+            
+            </summary>
+            <param name="catalog"></param>
+            <param name="srcTable"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.LookupColumn(ADOX.Catalog,System.Data.DataColumn)">
+            <summary>
+            
+            </summary>
+            <param name="catalog"></param>
+            <param name="column"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.LookupTable(ADOX.Catalog,System.Data.DataTable)">
+            <summary>
+            
+            </summary>
+            <param name="catalog"></param>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.CreateRelation(ADOX.Catalog,System.Data.DataRelation)">
+            <summary>
+            
+            </summary>
+            <param name="catalog"></param>
+            <param name="relation"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.ResolveType(System.Data.DataColumn)">
+            <summary>
+            
+            </summary>
+            <param name="column"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.TypeFor(System.Data.DataColumn)">
+            <summary>
+            
+            </summary>
+            <param name="column"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.SizeFor(System.Data.DataColumn)">
+            <summary>
+            
+            </summary>
+            <param name="column"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.AdoxDataSchemaAdapter.Sanitize(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Xsd2Db.Data.DataSchemaAdapter">
+            <summary>
+            Summary description for DataSchemaAdapter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.DataSchemaAdapter.Create(System.Data.DataSet,System.Boolean)">
+            <summary>
+            Create a new database conforming to the passed schema.
+            </summary>
+            <param name="schema">a DataSet containing the schema</param>
+            <param name="force">overwrite the database if it exists</param>
+        </member>
+        <member name="M:Xsd2Db.Data.DataSchemaAdapter.Create(System.Data.DataSet,System.Boolean,System.String)">
+            <summary>
+            Create a new database conforming to the passed schema.
+            </summary>
+            <param name="schema">a DataSet containing the schema</param>
+            <param name="force">overwrite the database if it exists</param>
+            <param name="TablePrefix">Adds a prefix to all tables</param>
+        </member>
+        <member name="M:Xsd2Db.Data.DataSchemaAdapter.Create(System.Data.DataSet,System.Boolean,System.String,System.String)">
+            <summary>
+            Create a new database conforming to the passed schema.
+            </summary>
+            <param name="schema">a DataSet containing the schema</param>
+            <param name="force">overwrite the database if it exists</param>
+            <param name="TablePrefix">Adds a prefix to all tables</param>
+            <param name="DbOwner">specifies a DBOwner if supported to the tables</param>
+        </member>
+        <member name="T:Xsd2Db.Data.JetDataSchemaAdapter">
+            <summary>
+            Summary description for JetDataSchemaAdapter.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.Data.JetDataSchemaAdapter.Extension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.JetDataSchemaAdapter.GetPath(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.JetDataSchemaAdapter.GetConnectionString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.JetDataSchemaAdapter.DeleteCatalog(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.JetDataSchemaAdapter.CreateCatalog(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.JetDataSchemaAdapter.OpenCatalog(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Xsd2Db.Data.ScriptBasedDataSchemaAdapter">
+            <summary>
+            This abstract class implements most of the functionality required
+            to map an XSD schema (represented with a DataSet) to an SQL creation
+            script.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.ScriptBasedDataSchemaAdapter.Xsd2Db#Data#DataSchemaAdapter#Create(System.Data.DataSet,System.Boolean)">
+            <summary>
+            Create a new database conforming to the passed schema.
+            </summary>
+            <param name="schema">a DataSet containing the schema</param>
+            <param name="force">overwrite the database if it exists</param>
+        </member>
+        <member name="M:Xsd2Db.Data.ScriptBasedDataSchemaAdapter.GetConnection">
+            <summary>
+            Child classes should provice an implementation which returns a
+            connection to the server on which to create the new database.
+            </summary>
+            <returns>an unopened connection to the server.</returns>
+        </member>
+        <member name="M:Xsd2Db.Data.ScriptBasedDataSchemaAdapter.GetConnection(System.String)">
+            <summary>
+            Child classes should provice an implementation which returns a
+            connection to the server on which to create the new database.
+            The returned connection must be bound to the context of the
+            catalog/database given as a parameter (by name).
+            </summary>
+            <param name="catalog">The catalog (i.e., database) context
+            to connect to</param>
+            <returns>an unopened connection to the server.</returns>
+        </member>
+        <member name="M:Xsd2Db.Data.ScriptBasedDataSchemaAdapter.GetTypeFor(System.Data.DataColumn)">
+            <summary>
+            Returns the type description for the column given.
+            </summary>
+            <param name="column"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.ScriptBasedDataSchemaAdapter.MakeSafe(System.String)">
+            <summary>
+            Returns a safe version of the given name.
+            </summary>
+            <param name="inputValue">Original Name</param>
+            <returns>Converted name</returns>
+        </member>
+        <member name="M:Xsd2Db.Data.ScriptBasedDataSchemaAdapter.GetCreateScript(System.String,System.Boolean)">
+            <summary>
+            Returns a script which creates an empty database having the given name.
+            </summary>
+            <param name="databaseName">the name of the database to create</param>
+            <param name="overwrite">should an existing database (of the same name) be deleted</param>
+            <returns>the script required to create an empty database having the given name</returns>
+        </member>
+        <member name="M:Xsd2Db.Data.ScriptBasedDataSchemaAdapter.GetSchemaScript(System.Data.DataSet)">
+            <summary>
+            Returns the creation script which corresponds to the schema
+            contained in the .xsd file which is passed as a parameter.
+            </summary>
+            <exception cref="T:System.ArgumentException">This method does not support
+            the creation of a schema containing tables that have zero (0)
+            columns.  Nor does is support relations where one (or both) sides
+            of the relationship is defined by zero (0) columns.</exception>
+            <exception cref="T:System.NotSupportedException">May be thrown if the
+            method is unable to determine the database type for a column
+            </exception>
+            <param name="dataSet">the DataSet containing the database schema
+            to be created.
+            </param>
+            <returns>An SQL creation script corresponding to the schema of
+            the passed DataSet.</returns>
+        </member>
+        <member name="M:Xsd2Db.Data.ScriptBasedDataSchemaAdapter.MakeTable(System.Data.DataTable)">
+            <summary>
+            Returns a script which creates a database table that
+            corresponds to <paramref name="table"/>.
+            </summary>
+            <param name="table"></param>
+            <returns>the script which creates a table corresponding to <paramref name="table"/></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.ScriptBasedDataSchemaAdapter.MakeList(System.Data.DataColumn[])">
+            <summary>
+            Returns the names of the columns in <paramref name="columns"/>.
+            </summary>
+            <param name="columns">the collection of columns to be put in the list</param>
+            <returns>the names of the columns in a comma separated list</returns>
+            <exception cref="T:System.ArgumentException">This is thrown if
+            <paramref name="columns"/> is empty or null</exception>
+        </member>
+        <member name="M:Xsd2Db.Data.ScriptBasedDataSchemaAdapter.MakeList(System.Data.DataColumnCollection)">
+            <summary>
+            Returns the names of the columns in <paramref name="columns"/>.  Each
+            name is followed by the type of data which the column contains.
+            </summary>
+            <param name="columns">the collection of columns to be put in the list</param>
+            <returns>the names of the columns in a comma separated list</returns>
+            <exception cref="T:System.ArgumentException">This is thrown if
+            <paramref name="columns"/> is empty or null</exception>
+        </member>
+        <member name="M:Xsd2Db.Data.ScriptBasedDataSchemaAdapter.MakeRelation(System.Data.DataRelation)">
+            <summary>
+            Returns a script which will create a database relations
+            corresponding to the passed DataRelation.
+            </summary>
+            <param name="relation">the DataRelation to be scripted</param>
+            <returns>the script to create the relation</returns>
+            <exception cref="T:System.ArgumentException">This is thrown if
+            <paramref name="relation"/> is null or any of the
+            key sets in the relation are empty</exception>
+        </member>
+        <member name="T:Xsd2Db.Data.SqlDataSchemaAdapter">
+            <summary>
+            A class which generates creation scripts which are compatible
+            with Microsoft SQL Server 2000.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.Data.SqlDataSchemaAdapter.TypeMap">
+            <summary>
+            A map between a data type name and a database type template
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.Data.SqlDataSchemaAdapter.Host">
+            <summary>
+            The database host to connect to.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.SqlDataSchemaAdapter.#ctor(System.String)">
+            <summary>
+            Creates a new SqlScriptGenerator instance.
+            </summary>
+            <param name="host">the database host to connect to</param>
+        </member>
+        <member name="M:Xsd2Db.Data.SqlDataSchemaAdapter.#cctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.SqlDataSchemaAdapter.GetConnection">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.SqlDataSchemaAdapter.GetConnection(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="catalog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.SqlDataSchemaAdapter.MakeSafe(System.String)">
+            <summary>
+            SQL Server names to be more than 128 characters long.
+            This function trims the given name and returns at
+            most the first 128 characters.  It also wraps the name
+            in square brackets (i.e., '[' and ']').
+            </summary>
+            <param name="inputValue">Original Name</param>
+            <returns>Converted name</returns>
+        </member>
+        <member name="M:Xsd2Db.Data.SqlDataSchemaAdapter.GetTypeFor(System.Data.DataColumn)">
+            <summary>
+            Returns the type descriptor corresponding to
+            <paramref name="column"/>.
+            </summary>
+            <param name="column">the DataColumn for which the type is desired</param>
+            <returns>the type descriptor corresponding to
+            <paramref name="column"/></returns>
+        </member>
+        <member name="T:Xsd2Db.Data.Test.Common">
+            <summary>
+            Summary description for BaseTest.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.Common.Connection">
+            <summary>
+            This should return a database connection to the catalog which has
+            just been created (or it should fail by throwing an exception).
+            </summary>
+            <returns>A new data base connection on which to perform the test</returns>
+        </member>
+        <member name="F:Xsd2Db.Data.Test.Common.Catalog">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.Common.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="catalog"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.Common.ValidateExceptionOnDuplicateInsert(System.Exception,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="exception"></param>
+            <param name="commandText"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.Common.ValidateExceptionOnBadForeignKeyInsert(System.Exception,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="exception"></param>
+            <param name="commandText"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.Common.MakeDataSet">
+            <summary>
+            Creates a data set to be used with the DoRelationTest helper
+            method.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.Common.DoRelationTest(System.Data.DataSet,Xsd2Db.Data.DataSchemaAdapter)">
+            <summary>
+            Perform some basic insertion tests using primary and foreign
+            key constraints.
+            </summary>
+            <param name="ds">the dataset from which to take the schema.
+            This DataSet should be derived from one created by the
+            <see cref="M:Xsd2Db.Data.Test.Common.MakeDataSet"/> method.
+            </param>
+            <param name="creator">The DataSchemaAdapter to use for this
+            test.</param>
+        </member>
+        <member name="T:Xsd2Db.Data.Test.Helper">
+            <summary>
+            Summary description for Helper.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.Helper.Print(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="T:Xsd2Db.Data.Test.JetTest">
+            <summary>
+            This class contains tests that involve a database connection.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.Connection">
+            <summary>
+            Returns a properly formatted connection string.
+            </summary>
+            <returns>A properly formatted connection string</returns>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.ValidateExceptionOnDuplicateInsert(System.Exception,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="exception"></param>
+            <param name="commandText"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.ValidateExceptionOnBadForeignKeyInsert(System.Exception,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="exception"></param>
+            <param name="commandText"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.TestNullDataSet">
+            <summary>
+            Test to see what happens if the user tries to create a schema
+            definition script for a null data set.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.TestUnnamedDataSet">
+            <summary>
+            Test to see what happens if the user tries to create a schema
+            definition script for an unnamed data set.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.TestNoColumns1">
+            <summary>
+            Test to see what happens if the user tries to get a schema
+            creation script for a dataSet containing a table that has
+            no columns.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.TestNoColumns2">
+            <summary>
+            Test to see what happens if the user tries to get a schema
+            creation script for a dataSet containing a table that has
+            no columns.  The schema is loaded from a file.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.CreateEmptyDB">
+            <summary>
+            Tests the creation (and subsequent removal) of a database.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.RelationTest1">
+            <summary>
+            Perform some basic insertion tests using primary and foreign
+            key constraints.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.RelationTest2">
+            <summary>
+            Perform some basic insertion tests using primary and foreign
+            key constraints.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.CreateFromOntology">
+            <summary>
+            Tests the creation (and subsequent removal) of a database.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.SetUp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.TearDown">
+            <summary>
+            Cleanup code to ensure that the tests don't leave anything
+            behind in the database.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.JetTest.CleanUp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.Data.Test.SqlTest">
+            <summary>
+            This class contains tests that involve a database connection.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.Data.Test.SqlTest.Host">
+            <summary>
+            The database host on which all of the tests will be performed.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.ValidateExceptionOnDuplicateInsert(System.Exception,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="exception"></param>
+            <param name="commandText"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.ValidateExceptionOnBadForeignKeyInsert(System.Exception,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="exception"></param>
+            <param name="commandText"></param>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.Connection(System.String,System.String)">
+            <summary>
+            Returns a properly formatted connection string.
+            </summary>
+            <param name="host">the database server host</param>
+            <param name="catalog">the database to connect to by default</param>
+            <returns>A properly formatted connection string</returns>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.Connection">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.TestNullName">
+            <summary>
+            Test to see what happens if the user tries to get a database
+            creation script for a null database name.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.TestEmptyName">
+            <summary>
+            Test to see what happens if the user tries to get a database
+            creation script for a zero-length database name.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.TestContentFreeName">
+            <summary>
+            Test to see what happens if the user tries to get a database
+            creation script for a database name that doesn't have any
+            non-whitespace characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.TestNullDataSet">
+            <summary>
+            Test to see what happens if the user tries to create a schema
+            definition script for a null data set.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.TestNoColumns1">
+            <summary>
+            Test to see what happens if the user tries to get a schema
+            creation script for a dataSet containing a table that has
+            no columns.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.TestNoColumns2">
+            <summary>
+            Test to see what happens if the user tries to get a schema
+            creation script for a dataSet containing a table that has
+            no columns.  The schema is loaded from a file.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.CreateEmptyDB(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="force">should the database be overwritten</param>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.CreateEmptyDB">
+            <summary>
+            Tests the creation of an empty database.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.FailOnDuplicate">
+            <summary>
+            Should fail to create a duplicate database without the force
+            flag being  set.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.OverwriteDB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.RelationTest1">
+            <summary>
+            Perform some basic insertion tests using primary and foreign
+            key constraints.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.RelationTest2">
+            <summary>
+            Perform some basic insertion tests using primary and foreign
+            key constraints.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.CreateFromOntology">
+            <summary>
+            Tests the creation (and subsequent removal) of a database. Test with a complex XSD file
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.SetUp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.SqlTest.TearDown">
+            <summary>
+            Cleanup code to ensure that the tests don't leave anything
+            behind in the database.
+            </summary>
+        </member>
+    </members>
+</doc>

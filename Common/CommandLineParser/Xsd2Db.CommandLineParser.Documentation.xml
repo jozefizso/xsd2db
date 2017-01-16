@@ -1,0 +1,1736 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Xsd2Db.CommandLineParser</name>
+    </assembly>
+    <members>
+        <member name="T:Xsd2Db.CommandLineParser.Argument">
+            <summary>
+            Summary description for Argument.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Argument.#ctor(System.String,System.String)">
+            <summary>
+            Private constructor for an argument record.
+            </summary>
+            <param name="name">the name of the argument</param>
+            <param name="text">the value of the argument</param>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Argument.Name">
+            <summary>
+            The name of this argument.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Argument.Value">
+            <summary>
+            The value of this argument
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.ArgumentCollection">
+            <summary>
+            A type safe collection of Arguments are stored in the order in
+            which they appear on the command line.  The program name is not
+            included in an ArgumentCollection.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ArgumentCollection.#ctor">
+            <summary>
+            Internal constructor.  An argument collection can only be
+            created within this assembly.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ArgumentCollection.Clear">
+            <summary>
+            Removes all arguments from the collection.  An argument
+            collection can only be cleared within this assembly.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ArgumentCollection.Add(Xsd2Db.CommandLineParser.Argument)">
+            <summary>
+            Adds an argument to the argument list.  An argument collection
+            is only modifiable within this assembly.
+            </summary>
+            <param name="argument">the argument to be appended</param>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ArgumentCollection.Add(System.String,System.String)">
+            <summary>
+            Adds an argument to the argument list.  An argument collection
+            is only modifiable within this assembly.
+            </summary>
+            <param name="name">the name of the argument</param>
+            <param name="text">the value of the argument</param>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.ArgumentCollection.Item(System.Int32)">
+            <summary>
+            Get an argument by positional index.  Arguments are stored in
+            the order in which they appear on the command line.  The program
+            name is in this collection.
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.CommandLine">
+            <summary>
+            Summary description for CommandLine.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.CommandLine.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.CommandLine.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.CommandLine.AllowUnrecognized">
+            <summary>
+            True if the parser should allow arguments for which no corresponding
+            parameter is found to be accepted.  These arguments can be found by
+            looking through the <see cref="P:Xsd2Db.CommandLineParser.CommandLine.Arguments"/> collection.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.CommandLine.AutoValidate">
+            <summary>
+            True if the parser should automatically valicate the parameters
+            after they have been resolved.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.CommandLine.Arguments">
+            <summary>
+            The collection of arguments which have been parsed by this
+            parser.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.CommandLine.Parameters">
+            <summary>
+            The collection of parameters which this parser can recognize.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.CommandLine.ProgramName">
+            <summary>
+            The name of the program that is specified on this command line.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.CommandLine.FormatProvider">
+            <summary>
+            The format provider the parser should use for converting the
+            textual arguments into typed parameters.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.CommandLine.ParserType">
+            <summary>
+            Allows you to get or set the type of parser to use
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.CommandLine.Text">
+            <summary>
+            Get and set the command line text.  After setting the text, you
+            should examine the TextIsValid property to see if the text was
+            parsed properly.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.CommandLine.TextIsValid">
+            <summary>
+            True if the current command line text has been successfully parsed
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.CommandLine.Bind(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="application"></param>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.CommandLine.Bind(System.Object,System.Boolean)">
+            <summary>
+            Populates the collection of recognized parameters based on the
+            attributes that have been applied to the given objects members.
+            </summary>
+            <param name="application">
+              the application object whose members may be tagged with
+              <see cref="T:Xsd2Db.CommandLineParser.ParameterAttribute">ParameterAttributes</see>
+            </param>
+            <param name="inherit">
+              true if the parser should also consider attributes which are
+              inhereted from base classes of the application.
+            </param>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.CommandLine.Resolve">
+            <summary>
+            Goes through the arguments and matches them to the corresponding
+            parameters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.CommandLine.Validate">
+            <summary>
+            Goes through the parameters and makes sure that all required
+            parameters have been explicitly set in the command line.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.CommandLine.WriteHelp(System.IO.TextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.CommandLine.Assign(Xsd2Db.CommandLineParser.Parameter,System.String)">
+            <summary>
+            Converts the given text into the appropriate type for the given
+            parameter and sets the parameter's value.
+            </summary>
+            <param name="param">the parameter to be set</param>
+            <param name="text">the textual value to be parsed</param>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.CommandLine.TrimQuotes(System.String)">
+            <summary>
+            If the argument is framed by single or double quotes, trim them
+            out to just get the string's contents.
+            </summary>
+            <param name="text">the text to be trimmed</param>
+            <returns>
+            The input string without enclosing quotation marks
+            </returns>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.CommandLine.allowUnrecognizedValue">
+            <summary>
+            The private member variable that tracks whether or not arguments
+            for which no corresponding parameter specification is found should
+            be allowed.  The state of this parameter is managed by the
+            AllowUnrecognized property.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.CommandLine.autoValidateValue">
+            <summary>
+            The private member variable that tracks whether or not the
+            parameters should be automatically valicated after they are
+            resolved. The state of this parameter is managed by the
+            AutoValidate property.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.CommandLine.argumentCollection">
+            <summary>
+            The private member variable that stores the collection of
+            arguments which have been parsed by this parsed.  This
+            variable is accessible through the Arguments property and
+            its contents are manages by the set method for the Text
+            property.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.CommandLine.parameterCollection">
+            <summary>
+            The private member variable that stores the collection of
+            parameter specifications which the CommandLine can recognize.
+            This variable is accessible through the Parameters property.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.CommandLine.formatProviderValue">
+            <summary>
+            The private member variable that stores format provider the
+            parser should use for converting the textual arguments into
+            typed parameters.  The value of this variable is managed by
+            the FormatProvider property.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.CommandLine.programNameValue">
+            <summary>
+              The private member variable that stores the program name that
+              is specified on this command line.  The state of this variable
+              is managed by the set method for the Text property.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.CommandLine.textValue">
+            <summary>
+              The private member variable that tracks the current textual
+              value of this command line.  The state of this variable is
+              managed by the set method for the Text property.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.CommandLine.textIsValidValue">
+            <summary>
+              The private member variable that tracks whether or not the
+              current textual value of this command line parses correctly.
+              The state of this variable is managed by the set method for
+              the Text property.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.CommandLine.parserTypeValue">
+            <summary>
+              The private member variable that stores the type of parser to
+              use.
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Helper">
+            <summary>
+            Summary description for Helper.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Helper.EnsureNotNull(System.String,System.Object)">
+            <summary>
+            Makes sure that the given parameter is not null and, if requested,
+            not an empty string.
+            </summary>
+            <param name="paramName">the name of the parameter being validated</param>
+            <param name="paramValue">the value of the parameter being validated</param>
+            <exception cref="T:System.ArgumentNullException">
+              If paramValue is null.
+            </exception>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Helper.EnsureNotEmpty(System.String,System.String)">
+            <summary>
+            Makes sure that the given parameter is not null and, if requested,
+            not an empty string.
+            </summary>
+            <param name="paramName">the name of the parameter being validated</param>
+            <param name="paramValue">the value of the parameter being validated</param>
+            <exception cref="T:System.ArgumentException">
+              If paramValue is the empty string.
+            </exception>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Parameter">
+            <summary>
+            Summary description for Parameter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Parameter.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new parameter record.
+            </summary>
+            <param name="name">
+              The primary name by which this parameter is identified.
+            </param>
+            <param name="description">
+              Descriptive text explaining the use/purpose of this parameter.
+            </param>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Parameter.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Creates a new paramter record.
+            </summary>
+            <param name="name">
+              The primary name by which this parameter is identified.
+            </param>
+            <param name="alias">
+              The alias by which this parameter is identified.
+            </param>
+            <param name="description">
+              Descriptive text explaining the use/purpose of this parameter.
+            </param>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Parameter.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Creates a new paramter record.
+            </summary>
+            <param name="name">
+              The primary name by which this parameter is identified.
+            </param>
+            <param name="description">
+              Descriptive text explaining the use/purpose of this parameter.
+            </param>
+            <param name="isCaseSensitive">
+              True if the name and alias should be matches using case
+              sensitivity.
+            </param>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Parameter.#ctor(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+              Creates a new parameter record.
+            </summary>
+            <param name="name">
+              The primary name by which this parameter is identified.
+            </param>
+            <param name="alias">
+              The alias by which this parameter is identified.
+            </param>
+            <param name="description">
+              Descriptive text explaining the use/purpose of this parameter.
+            </param>
+            <param name="isCaseSensitive">
+              True if the name and alias should be matches using case
+              sensitivity.
+            </param>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.Name">
+            <summary>
+            The primary name by which this parameter is identified.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.Alias">
+            <summary>
+            An optional alias by which this parameter is identified.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.Description">
+            <summary>
+            Descriptive text explaining the use/purpose of this parameter.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.IsCaseSensitive">
+            <summary>
+            True if the the name and alias of the parameter are to be
+            matched using case sensitivity.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.IsCaseSensitiveDefault">
+            <summary>
+            Should parameters be case sensitive by default.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.IsBound">
+            <summary>
+            True if this parameter has been bound to an owning instance
+            and member.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.IsReadable">
+            <summary>
+            True if this parameter can be used to get the value of
+            some bound member.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.IsWritable">
+            <summary>
+            True if this parameter can be used to set the value of
+            some bound member.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.HasAlias">
+            <summary>
+            True if this paramter has an alias.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.Owner">
+            <summary>
+              The object instance to which this parameter is bound.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+              Thrown if the parameter is not bound to an owner and
+              member.
+            </exception>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.Member">
+            <summary>
+              The member field or property to which this parameter
+              is bound.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+              Thrown if the parameter is not bound to an owner and
+              member.
+            </exception>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.IsExplicitlySet">
+            <summary>
+              True of the value of this parameter has been explicitly set.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.HasType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.Type">
+            <summary>
+              The type of value which this parameter accepts.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+              If the parameter is bound, the type will automatically be set to
+              that of the bound member.  It is an invalid operation to attempt
+              to override that type assignment.
+            </exception>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.Default">
+            <summary>
+            The default value of this parameter.  This value should be used
+            if the parameter is not specified by the user.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+              Thrown if the parmeter does not have a default value.
+            </exception>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.HasDefault">
+            <summary>
+            True if there default value for this parameter.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.HasValue">
+            <summary>
+            True if the value of this parameter has been set.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.IsRequired">
+            <summary>
+            True if there this parameter has been flagges as a required
+            value by the user.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.Value">
+            <summary>
+            This property allows one to both set and retrieve the value
+            of this parameter.  If the parameter is bound to an owning
+            instance and member, the value of that member is directly
+            used; otherwise, an internal vlaue cache is used.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Parameter.ValueIsPrefixed">
+            <summary>
+            True if the resolved argument value of this parameter was prefixed
+            by an @ character.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Parameter.Bind(System.Object,System.Reflection.MemberInfo)">
+            <summary>
+              Bind this parameter to a member of an owning instance.
+              The member can be either a property of a field.
+            </summary>
+            <param name="owner">
+              The instance which owns the member
+            </param>
+            <param name="member">
+              The member to which this parameter should be bound.
+            </param>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Parameter.IsMatchFor(System.String)">
+            <summary>
+              Returns true if the given name is a match against this parameters
+              name or its alias.  This comparison takes the case sensitivity of
+              the parameter into account.
+            </summary>
+            <param name="name">the name to compare</param>
+            <returns>
+              true if the name is a match for this parameter's name or
+              alias.  This comparison takes the case sensitivity of the
+              parameter into account.
+            </returns>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Parameter.IsMatchFor(Xsd2Db.CommandLineParser.Parameter)">
+            <summary>
+            Returns true if this parameter is equavilent to the given parameter
+            This means that the name or alias of one could be confused with the
+            name or alias of the other.
+            </summary>
+            <param name="p">the other parameter</param>
+            <returns>true if these represent the same parameter name</returns>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Parameter.System#IComparable#CompareTo(System.Object)">
+            <summary>
+            Compare this parameter with another parameter.
+            </summary>
+            <param name="otherObject">the object with which to compare</param>
+            <returns></returns>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.ownerValue">
+            <summary>
+            Private member variable that holds the object instance to
+            which this parameter is bound.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.memberValue">
+            <summary>
+            Private member variable that holds the reflection information
+            about the object member to which this parameter is bound.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.typeValue">
+            <summary>
+            Private member variable that holds the type of object which this
+            parameter represents.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.internalValue">
+            <summary>
+            Private member variable that holds the value for this parameter
+            if the parameter is not bound to some other member.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.defaultValue">
+            <summary>
+            Private member variable that holds the default value for this
+            parameter or null (if no default value is set).
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.isRequiredValue">
+            <summary>
+            Private member variable that denotes whether or not this parameter
+            has been flagged as a required value by the user.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Parameter.valueIsPrefixedValue">
+            <summary>
+            Private member variable that trackes whether or not the resolved
+            argument value for this parameter is prefixed by an @ sign.
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.ParameterAttribute">
+            <summary>
+            Summary description for Parameter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ParameterAttribute.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Internal constructor called by other constructors.  Creates a new
+            Parameter specification attribute.
+            </summary>
+            <param name="name">
+              The full name for this parameter.  May not be empty or null.
+            </param>
+            <param name="alias">
+              An equivalent abbreviated name for this parameter.  May not be
+              null.  Use String.Empty to indicate that there is not alias for
+              this parameter.
+            </param>
+            <param name="description">
+              Explanatory text about this parameter.  May not be empty or null.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+              If any of the string parameters are null
+            </exception>
+            <exception cref="T:System.ArgumentException">
+              If a required string parameter is the empty string
+            </exception>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ParameterAttribute.#ctor(System.String,System.String)">
+            <summary>
+              Creates a parameter specification attribute for an optional
+              parameter
+            </summary>
+            <param name="name">
+              The full name for this parameter.  May not be empty or null.
+            </param>
+            <param name="description">
+              Explanatory text about this parameter.  May not be empty or null.
+            </param>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.ParameterAttribute.Name">
+            <summary>
+              The long form of the parameter.
+              Will be a non-empty string.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.ParameterAttribute.Alias">
+            <summary>
+            An abbreviated form of the parameter.    May be the empty string.
+            The empty string signigies that no abbreviated form exists.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.ParameterAttribute.Description">
+            <summary>
+            The text to use when constructing the usage instructions for this
+            parameter.  This string will be non-empty.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.ParameterAttribute.HasDefault">
+            <summary>
+            True if there default value for this parameter.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.ParameterAttribute.HasAlias">
+            <summary>
+            True if there is a valid short form for this value
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.ParameterAttribute.IsRequired">
+            <summary>
+            True if there this parameter has been flagges as a required
+            value by the user.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.ParameterAttribute.IsCaseSensitive">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.ParameterAttribute.Default">
+            <summary>
+            The default value of this parameter.  This value should be used
+            if the parameter is not specified by the user.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+              Thrown if the parmeter does not have a default value.
+            </exception>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.ParameterAttribute.defaultValue">
+            <summary>
+            Private member variable that holds the default value for this
+            parameter or null (if no default value is set).
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.ParameterAttribute.isRequiredValue">
+            <summary>
+            Private member variable that denotes whether or not this parameter
+            has been flagged as a required value by the user.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.ParameterAttribute.isCaseSensitiveValue">
+            <summary>
+            Private member variable that denotes whether or not this parameter's
+            name should be considered case sensitive.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.ParameterAttribute.caseSensitivityIsSet">
+            <summary>
+            Private member variable that denotes whether or not this parameter
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.ParameterCollection">
+            <summary>
+              A type safe collection of parameters.  The collection can be
+              accessed either by name or by positional index.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ParameterCollection.#ctor">
+            <summary>
+            Create a new empty ParameterCollection object.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ParameterCollection.Sort">
+            <summary>
+            Sorts the parameter list using the IComparable interface
+            of the Parameter instances.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ParameterCollection.Add(Xsd2Db.CommandLineParser.Parameter)">
+            <summary>
+            Adds the specified parameter to this parameter collection.
+            </summary>
+            <param name="p">the parameter to add</param>
+            <exception cref="T:System.ArgumentException">
+              if a 
+            </exception>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ParameterCollection.Contains(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name">
+              The name of the parameter to find.
+            </param>
+            <returns>
+              true if a parameter matching that name is in this collection
+            </returns>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ParameterCollection.Contains(Xsd2Db.CommandLineParser.Parameter)">
+             <summary>
+               Checks if the given parameter is a match for any parameter
+               in this collection.  This is the case if the parameter's
+               name or alias conflicts with the name or alias of a parameter
+               already in the collection.
+             </summary>
+             <param name="p">the parameter for which to search</param>
+             <returns>
+               true if the given parameter is a match for any parameter
+               in this collection.  This is the case if the parameter's
+               name or alias conflicts with the name or alias of a parameter
+               already in the collection.
+            </returns>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ParameterCollection.Get(System.Int32)">
+            <summary>
+            Retrieve a parameter by numerical index.
+            </summary>
+            <param name="i">the zero based index to retrieve</param>
+            <returns>the parameter at the given index</returns>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.ParameterCollection.Get(System.String)">
+            <summary>
+            Retrieve a parameter by name
+            </summary>
+            <param name="name">the name of the parameter to retrieve</param>
+            <returns>the parameter with the given name</returns>
+            <remarks>
+              The name may be either the parameter name of its alias.  If
+              the parameter is not case sensitive, the search will handle
+              the comparison appropriately.
+            </remarks>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.ParameterCollection.Item(System.String)">
+            <summary>
+            Retrieve a parameter by name.
+            </summary>
+            <remarks>
+              The name may be either the parameter name of its alias.  If
+              the parameter is not case sensitive, the search will handle
+              the comparison appropriately.
+            </remarks>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.ParameterCollection.Item(System.Int32)">
+            <summary>
+            Retrieve a parameter by numerical index.
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Pattern">
+            <summary>
+            Summary description for Parser.
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Pattern.GroupName">
+            <summary>
+            The group names with which to extract pattern matches.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.GroupName.CommandLine">
+            <summary>
+            The entire command line.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.GroupName.Command">
+            <summary>
+            The entire command (this is the ProgramName plus any
+            enclosing quotes)
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.GroupName.ProgramName">
+            <summary>
+            The program name.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.GroupName.Parameter">
+            <summary>
+            A parameter (the entire name value pair)
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.GroupName.ParameterName">
+            <summary>
+            A parameter name
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.GroupName.ParameterValue">
+            <summary>
+            A parameter value
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.StartOfNamedParamPattern">
+            <summary>
+            The pattern which starts a namee parameter: -, --, or /
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.NameValueSeparatorPattern">
+            <summary>
+            The pattern which separates a parameter name from its
+            value: =, :, or &lt;space&gt;
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.IdentifierPattern">
+            <summary>
+            The pattern which matches an C style identifier
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.NamePattern">
+            <summary>
+            The pattern which matches a parameter name: a(.b)* where a and b
+            can be any valid C style identifier
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.UnQuotedValuePattern">
+            <summary>
+            The pattern which matches any unquoted parameter value.  This
+            pattern allows for escaped space characters using the backslash.
+            Pattern is a word character, period, backslash, or forward slash
+            forward by any number of non-whitespace characters, escaped
+            space characters that don't look they lead into another parameter,
+            or backslash characters.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.DoubleQuotedValuePattern">
+            <summary>
+            The pattern which matches a string enclosed in double quotes.
+            May be preceded by an @ sign.  The application might want to
+            use @ prefixed strings to denote escaped vs. literal string
+            values.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.SingleQuotedValuePattern">
+            <summary>
+            The pattern which matches a string enclosed in single quotes.
+            May be preceded by an @ sign.  The application might want to
+            use @ prefixed strings to denote escaped vs. literal string
+            values.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.ValuePattern">
+            <summary>
+            The value pattern to use when advanced matching is enabled.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.AdvancedParameterPattern">
+            <summary>
+            The regular expression to match a parameter of the form
+            -name=value where:
+            <list type="*">
+            <item><c>name</c> can be a(.b)* and a,b are C style identifiers</item>
+            <item><c>-</c> can also be <c>/</c> or <c>--</c></item>
+            <item><c>=</c> can also be <c>:</c> of <c>&lt;space&gt;</c></item>
+            <item><c>value</c> is can containe escaped spaces or be
+            either single or double quoted.  If quoted, value can be
+            preceded by an <c>@</c></item>
+            </list>
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.BasicParameterPattern">
+            <summary>
+            The regular expression to match a parameter of the form
+            -name=value where:
+            <list type="*">
+            <item><c>name</c> can be a(.b)* and a,b are C style identifiers</item>
+            <item><c>-</c> can also be <c>/</c> or <c>--</c></item>
+            <item><c>=</c> can also be <c>:</c> of <c>&lt;space&gt;</c></item>
+            <item><c>value</c> can also be single or double quoted</item>
+            </list>
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.ApplicationPattern">
+            <summary>
+            The regular expression to match an application name.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.BasicCommandLinePattern">
+            <summary>
+            The regular expression string to match a complete command line.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.AdvancedCommandLinePattern">
+            <summary>
+            The regular expression string to match a complete command line.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.Options">
+            <summary>
+            The options with which to create the reqular expression parser.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.defaultParserTypeValue">
+            <summary>
+            The private member variable which stores the type of parser to use
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.BasicRegex">
+            <summary>
+            The regular expression 
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.AdvancedRegex">
+            <summary>
+            The regular expression 
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Pattern.ParserType">
+            <summary>
+            The parser to use by default
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.ParserType.Basic">
+            <summary>
+            Use the basic parser.  It doesn't try to do as much.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Pattern.ParserType.Advanced">
+            <summary>
+            Use the advanced parser, it recognizes more command lines.
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Pattern.DefaultParserType">
+            <summary>
+            Get of set the default type of parser to use.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Pattern.GetParser(Xsd2Db.CommandLineParser.Pattern.ParserType)">
+            <summary>
+            Gets the parser corresponding to the given type.
+            </summary>
+            <param name="type">the type of parser</param>
+            <returns>the parser corresponding to the given type.</returns>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Pattern.DefaultParser">
+            <summary>
+            Get the parser of the current default type.
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Test.HelperFunction">
+            <summary>
+            Summary description for HelperFunction.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.HelperFunction.ApplicationName">
+            <summary>
+            The default application name to use for testing
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.HelperFunction.MakeCommandLine(System.String)">
+            <summary>
+            creates a command line with the given parameters
+            </summary>
+            <param name="parameters">the parameter string</param>
+            <returns>a new command line string</returns>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.HelperFunction.ValidateParameter(System.Text.RegularExpressions.Match,System.Int32,System.String,System.String)">
+            <summary>
+            Checks if the expected name and value of the parameter is
+            a match for the captured name and value at the given index.
+            </summary>
+            <param name="match">the regular expression match</param>
+            <param name="index">the index of the captures name/value</param>
+            <param name="expectedName">the expected name</param>
+            <param name="expectedValue">the expected value</param>
+            <exception cref="T:NUnit.Framework.AssertionException">
+               Thrown if the actual name or value does not match the expected
+               name or value, respectively.
+            </exception>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.HelperFunction.ValidateApplication(System.Text.RegularExpressions.Match)">
+            <summary>
+              Checks that the command line was parsed correctly and that
+              the application name matches the expected application name.
+            </summary>
+            <param name="match">the regular expression match</param>
+            <exception cref="T:NUnit.Framework.AssertionException">
+               Thrown if the actual application name does not match the
+               expected application name, if an incorrect number of
+               application names was found, or if the match did not
+               succeed at all.
+            </exception>
+            <remarks>
+              assumes the command line was created with the
+              <see cref="M:Xsd2Db.CommandLineParser.Test.HelperFunction.MakeCommandLine(System.String)"/>
+              function.
+            </remarks>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.HelperFunction.ValidateApplication(System.Text.RegularExpressions.Match,System.String)">
+            <summary>
+              Checks that the command line was parsed correctly and that
+              the application name matches the expected application name.
+            </summary>
+            <param name="match">the regular expression match</param>
+            <param name="expectedName">the expected application name</param>
+            <exception cref="T:NUnit.Framework.AssertionException">
+               Thrown if the actual application name does not match the
+               expected application name, if an incorrect number of
+               application names was found, or if the match did not
+               succeed at all.
+            </exception>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.HelperFunction.ValidateArguments(System.Text.RegularExpressions.Match,System.Int32)">
+            <summary>
+              Checks if regular expression was successfully matched and if
+              the correct number of parameter were found.
+            </summary>
+            <param name="match">
+              the regular expression match
+            </param>
+            <param name="expectedParameterCount">
+              the expected number of paramters
+            </param>
+            <exception cref="T:NUnit.Framework.AssertionException">
+               Thrown if the actual parameter count does not match the expected
+               paramter count, or if the match did not succeed at all.
+            </exception>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.HelperFunction.ShouldMatch(System.Text.RegularExpressions.Regex,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="regex"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.HelperFunction.ShouldNotMatch(System.Text.RegularExpressions.Regex,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="regex"></param>
+            <param name="text"></param>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Test.PatternTest_Basic">
+            <summary>
+            Performs basic testing on the sub-expressions of the command line pattern.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.ApplicationRegex">
+            <summary>
+            The application regex to use
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.ParameterRegex">
+            <summary>
+            The parameter regex to use
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.#ctor(System.String,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="applicationRegex">The application regex to use</param>
+            <param name="parameterRegex">The parameter regex to use</param>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchProgramName">
+            <summary>
+            Ensure that the application regular expression correctly identifies
+            a program name.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchSwitch_01">
+            <summary>
+            Ensures that the parameter regular expression correctly recognizes
+            a switch using the "-" prefix.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchSwitch_02">
+            <summary>
+            Ensures that the parameter regular expression correctly recognizes
+            a switch using the "--" prefix.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchSwitch_03">
+            <summary>
+            Ensures that the parameter regular expression correctly recognizes
+            a switch using the "/" prefix.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchParameter_01">
+            <summary>
+            Ensures that the parameter regular expression correctly recognizes
+            a switch using the "-" prefix and a seperating space.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchParameter_02">
+            <summary>
+            Ensures that the parameter regular expression correctly recognizes
+            a switch using the "-" prefix and a seperating colon.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchParameter_03">
+            <summary>
+            Ensures that the parameter regular expression correctly recognizes
+            a switch using the "-" prefix and a seperating equals sign.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchParameter_04">
+            <summary>
+            Ensures that the parameter regular expression correctly recognizes
+            a switch using the "--" prefix and a separating space.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchParameter_05">
+            <summary>
+            Ensures that the parameter regular expression correctly recognizes
+            a switch using the "--" prefix and a separating colon.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchParameter_06">
+            <summary>
+            Ensures that the parameter regular expression correctly recognizes
+            a switch using the "--" prefix and a separating equals sign.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchParameter_07">
+            <summary>
+            Ensures that the parameter regular expression correctly recognizes
+            a switch using the "/" prefix and a seperating space.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchParameter_08">
+            <summary>
+            Ensures that the parameter regular expression correctly recognizes
+            a switch using the "/" prefix and a seperating colon.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic.MatchParameter_09">
+            <summary>
+            Ensures that the parameter regular expression correctly recognizes
+            a switch using the "/" prefix and a seperating equals sign.
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Test.PatternTest_Basic_UsingBasicPattern">
+            <summary>
+            Performs basic testing on the sub-expressions of the command line pattern
+            using the basic regular expression for the parameter tests.
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic_UsingBasicPattern.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Test.PatternTest_Basic_UsingAdvancedPattern">
+            <summary>
+            Performs basic testing on the sub-expressions of the command line pattern
+            using the advances regular expression for the parameter tests.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic_UsingAdvancedPattern.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic_UsingAdvancedPattern.StartOfNamePatternTest">
+            <summary>
+            The start of name pattern should match a single dash
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic_UsingAdvancedPattern.NameValueSeparatorPatternTest">
+            <summary>
+            Test the NameValueSeparatorPattern
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic_UsingAdvancedPattern.IdentifierPatternTest">
+            <summary>
+            Test the IdentifirePattern
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic_UsingAdvancedPattern.NamePatternTest">
+            <summary>
+            Test the NamePattern
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic_UsingAdvancedPattern.UnQuotedValuePatternTest">
+            <summary>
+            Test the UnQuotedValuePattern
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic_UsingAdvancedPattern.SingleQuotedValuePatternTest">
+            <summary>
+            Test the SingleQuotedValuePattern
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic_UsingAdvancedPattern.DoubleQuotedValuePatternTest">
+            <summary>
+            Test the DoubleQuotedValuePattern
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Basic_UsingAdvancedPattern.ValuePatternTest">
+            <summary>
+            Tests the ValuePattern
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Test.PatternTest_Complex_UsingBasicPattern">
+            <summary>
+            Performs basic testing on the sub-expressions of the command line pattern
+            using the basic regular expression for the parameter tests.
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex_UsingBasicPattern.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Test.PatternTest_Complex_UsingAdvancedPattern">
+            <summary>
+            Performs basic testing on the sub-expressions of the command line pattern
+            using the advances regular expression for the parameter tests.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex_UsingAdvancedPattern.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Test.PatternTest_Complex">
+            <summary>
+            Summary description for ParserTest.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.Regex">
+            <summary>
+            The parameter regex to use
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.#ctor(System.Text.RegularExpressions.Regex)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="regex">The parser to use</param>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchProgramWithNoArguments">
+            <summary>
+            Match a command line having no arguments
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleSwitch_01">
+            <summary>
+            Match a command line having a single switch specified with the "-"
+            delimiter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleSwitch_02">
+            <summary>
+            Match a command line having a single switch specified with the "--"
+            delimiter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleSwitch_03">
+            <summary>
+            Match a command line having a single switch specified with the "/"
+            delimiter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_01">
+            <summary>
+            Match a single argument specified with the "-" prefix and the
+            separated from its value by an equals sign.  The value is not
+            enclosed by any string delimiter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_02">
+            <summary>
+            Match a single argument specified with the "-" prefix and the
+            separated from its value by a colon.  The value is not enclosed
+            by any string delimiter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_03">
+            <summary>
+            Match a single argument specified with the "-" prefix and the
+            separated from its value by a space.  The value is not enclosed
+            by any string delimiter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_04">
+            <summary>
+            Match a single argument specified with the "--" prefix and the
+            separated from its value by an equals sign.  The value is not
+            enclosed by any string delimiter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_05">
+            <summary>
+            Match a single argument specified with the "--" prefix and the
+            separated from its value by a colon.  The value is not enclosed
+            by any string delimiter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_06">
+            <summary>
+            Match a single argument specified with the "--" prefix and the
+            separated from its value by a space.  The value is not enclosed
+            by any string delimiter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_07">
+            <summary>
+            Match a single argument specified with the "/" prefix and the
+            separated from its value by an equals sign.  The value is not
+            enclosed by any string delimiter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_08">
+            <summary>
+            Match a single argument specified with the "/" prefix and the
+            separated from its value by a colon.  The value is not enclosed
+            by any string delimiter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_09">
+            <summary>
+            Match a single argument specified with the "/" prefix and the
+            separated from its value by a space.  The value is not enclosed
+            by any string delimiter.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_10">
+            <summary>
+            Match a single argument specified with the "-" prefix and the
+            separated from its value by an equals sign.  The value is enclosed
+            by double quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_11">
+            <summary>
+            Match a single argument specified with the "-" prefix and the
+            separated from its value by a colon.  The value is enclosed
+            by double quotes characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_12">
+            <summary>
+            Match a single argument specified with the "-" prefix and the
+            separated from its value by a space.  The value is enclosed
+            by double quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_13">
+            <summary>
+            Match a single argument specified with the "--" prefix and the
+            separated from its value by an equals sign.  The value is enclosed
+            by double quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_14">
+            <summary>
+            Match a single argument specified with the "--" prefix and the
+            separated from its value by a colon.  The value is enclosed
+            by double quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_15">
+            <summary>
+            Match a single argument specified with the "--" prefix and the
+            separated from its value by a space.  The value is enclosed
+            by double quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_16">
+            <summary>
+            Match a single argument specified with the "/" prefix and the
+            separated from its value by an equals sign.  The value is enclosed
+            by double quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_17">
+            <summary>
+            Match a single argument specified with the "/" prefix and the
+            separated from its value by a colon.  The value is enclosed
+            by double quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_18">
+            <summary>
+            Match a single argument specified with the "/" prefix and the
+            separated from its value by a space.  The value is enclosed
+            by double quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_19">
+            <summary>
+            Match a single argument specified with the "-" prefix and the
+            separated from its value by an equals sign.  The value is enclosed
+            by single quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_20">
+            <summary>
+            Match a single argument specified with the "-" prefix and the
+            separated from its value by a colon.  The value is enclosed
+            by single quotes characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_21">
+            <summary>
+            Match a single argument specified with the "-" prefix and the
+            separated from its value by a space.  The value is enclosed
+            by single quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_22">
+            <summary>
+            Match a single argument specified with the "--" prefix and the
+            separated from its value by an equals sign.  The value is enclosed
+            by single quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_23">
+            <summary>
+            Match a single argument specified with the "--" prefix and the
+            separated from its value by a colon.  The value is enclosed
+            by single quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_24">
+            <summary>
+            Match a single argument specified with the "--" prefix and the
+            separated from its value by a space.  The value is enclosed
+            by single quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_25">
+            <summary>
+            Match a single argument specified with the "/" prefix and the
+            separated from its value by an equals sign.  The value is enclosed
+            by single quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_26">
+            <summary>
+            Match a single argument specified with the "/" prefix and the
+            separated from its value by a colon.  The value is enclosed
+            by single quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchSingleArgument_27">
+            <summary>
+            Match a single argument specified with the "/" prefix and the
+            separated from its value by a space.  The value is enclosed
+            by single quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchMultiSwitch_01">
+            <summary>
+            Match a command line three switches (each specified using
+            a different delimiter)
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchMultiSwitch_02">
+            <summary>
+            Match a command line three switches (each specified using
+            a different delimiter)
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchMultiSwitch_03">
+            <summary>
+            Match a command line three switches (each specified using
+            a different delimiter)
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchMultiArgument_01">
+            <summary>
+            Match three arguments each specified with a different starting
+            sequence, separator, and value delimiter
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchMultiArgument_02">
+            <summary>
+            Match three arguments each specified with a different starting
+            sequence, separator, and value delimiter
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchMultiArgument_03">
+            <summary>
+            Match three arguments each specified with a different starting
+            sequence, separator, and value delimiter
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchNestedString_01">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchNestedString_02">
+            <summary>
+            Match a single argument specified with the "--" prefix and the
+            separated from its value by a space.  The value is enclosed
+            by single quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchMixed_01">
+            <summary>
+            Match a single argument specified with the "--" prefix and the
+            separated from its value by a space.  The value is enclosed
+            by single quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.MatchMixed_02">
+            <summary>
+            Match a single argument specified with the "--" prefix and the
+            separated from its value by a space.  The value is enclosed
+            by single quote characters.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.PatternTest_Complex.ComplainOnStrange_01">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Test.RegressionTest">
+            <summary>
+            Summary description for ParameterAttributeTest.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.DefaultBooleanField">
+            <summary>
+            A boolean parameter bound to a field and having a default value
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.DefaultBooleanProperty">
+            <summary>
+            A boolean parameter bound to a property and having a default value
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.BooleanField">
+            <summary>
+            A boolean parameter bound to a field
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.IntegerField">
+            <summary>
+            A integer parameter bound to a field
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.DateTimeField">
+            <summary>
+            A DateTime parameter bound to a field
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.StringField">
+            <summary>
+            A string parameter bound to a field
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Test.RegressionTest.BooleanProperty">
+            <summary>
+            A boolean parameter bound to a property
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.booleanValue">
+            <summary>
+            The underlying value for <see cref="P:Xsd2Db.CommandLineParser.Test.RegressionTest.BooleanProperty"/>
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Test.RegressionTest.IntegerProperty">
+            <summary>
+            A integer parameter bound to a property
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.integerValue">
+            <summary>
+            The underlying value for <see cref="P:Xsd2Db.CommandLineParser.Test.RegressionTest.IntegerProperty"/>
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Test.RegressionTest.DateTimeProperty">
+            <summary>
+            A DateTime parameter bound to a property
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.dateTimeValue">
+            <summary>
+            The underlying value for <see cref="P:Xsd2Db.CommandLineParser.Test.RegressionTest.DateTimeProperty"/>
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Test.RegressionTest.StringProperty">
+            <summary>
+            A string parameter bound to a property
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.stringValue">
+            <summary>
+            The underlying value for <see cref="P:Xsd2Db.CommandLineParser.Test.RegressionTest.StringProperty"/>
+            </summary>
+        </member>
+        <member name="T:Xsd2Db.CommandLineParser.Test.RegressionTest.Enumeration">
+            <summary>
+            An enumeration to used when testing enumeration properties
+            and fields.
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.Enumeration.Initial">
+            <summary>
+            The initial value.  All enum tests should validate that
+            the field/property does not remain at this value
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.Enumeration.Value1">
+            <summary>
+            Some test value
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.Enumeration.Value2">
+            <summary>
+            Some test value
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.Enumeration.Value3">
+            <summary>
+            Some test value
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.Enumeration.Value4">
+            <summary>
+            Some test value
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.enumField">
+            <summary>
+            An enumeration parameter bound to a field
+            </summary>
+        </member>
+        <member name="P:Xsd2Db.CommandLineParser.Test.RegressionTest.enumProperty">
+            <summary>
+            An enumeration parameter bound to a property
+            </summary>
+        </member>
+        <member name="F:Xsd2Db.CommandLineParser.Test.RegressionTest.enumValue">
+            <summary>
+            The underlying value for <see cref="P:Xsd2Db.CommandLineParser.Test.RegressionTest.enumProperty"/>
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.SetUp">
+            <summary>
+            Initialize all fields and properties to a known state.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.ProgramNameText">
+            <summary>
+            Ensure that the program name is parsed correctly.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.BooleanFieldTest_01">
+            <summary>
+            Ensre that that the boolean field is set correctly
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.BooleanFieldTest_02">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.BooleanFieldTest_03">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.BooleanFieldTest_04">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.BooleanPropertyTest_01">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.BooleanPropertyTest_02">
+            <summary>
+            Ensure that the boolean property is set using its alias if
+            'true' is the argument value is supplied on the command line.
+            The alias uses different case, and the parameter is not case
+            sensitive.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.BooleanPropertyTest_03">
+            <summary>
+            Ensure that the boolean property is set using its full name if
+            'True' is the argument value is supplied on the command line.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.BooleanPropertyTest_04">
+            <summary>
+            Ensure that the boolean property is set using its alias if 'Yes'
+            is the argument value is supplied on the command line.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.DefaultBooleanFieldTest">
+            <summary>
+            Ensure that the default value of the boolean field is set if
+            the matching argument is not supplied on the command line.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.DefaultBooleanPropertyTest">
+            <summary>
+            Ensure that the default value of the boolean property is set if
+            the matching argument is not supplied on the command line.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.EnumFieldTest_01">
+            <summary>
+            Ensure that the enumeration field gets correctly set using
+            its full name.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.EnumFieldTest_02">
+            <summary>
+            Ensure that the enumeration field gets correctly set using
+            its alias.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.EnumPropertyTest_01">
+            <summary>
+            Ensure that the enumeration property gets correctly set using
+            its full name even if the case used to specify the enumeration
+            value is different from the enumeration value (i.e., matching
+            should be not be case sensitive)
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.CommandLineParser.Test.RegressionTest.EnumPropertyTest_02">
+            <summary>
+            Ensure that the enumeration property gets correctly set using
+            its alias even if the case used to specify the enumeration
+            value is different from the enumeration value (i.e., matching
+            should be not be case sensitive)
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Ontology" targetNamespace="http://tempuri.org/ObjectModel.xsd" xmlns:mstns="http://tempuri.org/ObjectModel.xsd" xmlns="http://tempuri.org/ObjectModel.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="Ontology" msdata:IsDataSet="true" msdata:Locale="en-CA">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="version">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="previous" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+              <xs:element name="author" msdata:Caption="The author of this version of the model">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="title" msdata:Caption="The EPM ontology for this version of the model" type="xs:string" />
+              <xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="comments" type="xs:string" minOccurs="0" />
+              <xs:element name="ontology_filename" type="xs:string" minOccurs="0" />
+              <xs:element name="ontology_contents" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="constant">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="class" msdata:Caption="The name of the class to which this constant belongs">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="slot" msdata:Caption="The name of the slot to which this constant belongs">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="value" msdata:Caption="The value of the constant as a string.  The reader must parse this." type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="description" type="xs:string" minOccurs="0" />
+              <xs:element name="display_name" type="xs:string" minOccurs="0" />
+              <xs:element name="polarity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="origin" type="xs:string" minOccurs="0" />
+              <xs:element name="format_string" type="xs:string" minOccurs="0" />
+              <xs:element name="change_log" type="xs:string" minOccurs="0" />
+              <xs:element name="class_description" type="xs:string" minOccurs="0" />
+              <xs:element name="statement_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="comments" type="xs:string" minOccurs="0" />
+              <xs:element name="author" type="xs:string" minOccurs="0" />
+              <xs:element name="date_created" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="date_last_modified" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="action_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="security" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="class_description" type="xs:string" minOccurs="0" />
+              <xs:element name="comments" type="xs:string" minOccurs="0" />
+              <xs:element name="display_name" type="xs:string" minOccurs="0" />
+              <xs:element name="date_last_modified" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="change_log" type="xs:string" minOccurs="0" />
+              <xs:element name="origin" type="xs:string" minOccurs="0" />
+              <xs:element name="keyword" type="xs:string" minOccurs="0" />
+              <xs:element name="date_created" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="description" type="xs:string" minOccurs="0" />
+              <xs:element name="author" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="action_members_to_action">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="action__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="action__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_action_to_action">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="action__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="filter_connector_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="display_name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="filter_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="class_description" type="xs:string" minOccurs="0" />
+              <xs:element name="comments" type="xs:string" minOccurs="0" />
+              <xs:element name="display_name" type="xs:string" minOccurs="0" />
+              <xs:element name="date_last_modified" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="change_log" type="xs:string" minOccurs="0" />
+              <xs:element name="origin" type="xs:string" minOccurs="0" />
+              <xs:element name="date_created" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="description" type="xs:string" minOccurs="0" />
+              <xs:element name="author" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="criterion_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="display_name" type="xs:string" minOccurs="0" />
+              <xs:element name="operator" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="slot" type="xs:string" minOccurs="0" />
+              <xs:element name="value" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="filter_criteria_to_criterion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="filter__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="criterion__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="filter_connector_filter_to_filter">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="filter_connector__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="filter__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="actor_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="class_description" type="xs:string" minOccurs="0" />
+              <xs:element name="comments" type="xs:string" minOccurs="0" />
+              <xs:element name="jurisdiction" type="xs:string" minOccurs="0" />
+              <xs:element name="display_name" type="xs:string" minOccurs="0" />
+              <xs:element name="date_last_modified" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="change_log" type="xs:string" minOccurs="0" />
+              <xs:element name="origin" type="xs:string" minOccurs="0" />
+              <xs:element name="keyword" type="xs:string" minOccurs="0" />
+              <xs:element name="date_created" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="description" type="xs:string" minOccurs="0" />
+              <xs:element name="author" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="actor_members_to_actor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="actor__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="actor__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="filter_connector_container_to_actor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="filter_connector__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="actor__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="filter_connector_container_to_action">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="filter_connector__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="action__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="data_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="class_description" type="xs:string" minOccurs="0" />
+              <xs:element name="comments" type="xs:string" minOccurs="0" />
+              <xs:element name="jurisdiction" type="xs:string" minOccurs="0" />
+              <xs:element name="display_name" type="xs:string" minOccurs="0" />
+              <xs:element name="date_last_modified" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="change_log" type="xs:string" minOccurs="0" />
+              <xs:element name="origin" type="xs:string" minOccurs="0" />
+              <xs:element name="keyword" type="xs:string" minOccurs="0" />
+              <xs:element name="date_created" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="description" type="xs:string" minOccurs="0" />
+              <xs:element name="author" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="data_members_to_data">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="data__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="data__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="filter_connector_container_to_data">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="filter_connector__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="data__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="purpose_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="class_description" type="xs:string" minOccurs="0" />
+              <xs:element name="comments" type="xs:string" minOccurs="0" />
+              <xs:element name="display_name" type="xs:string" minOccurs="0" />
+              <xs:element name="date_last_modified" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="change_log" type="xs:string" minOccurs="0" />
+              <xs:element name="origin" type="xs:string" minOccurs="0" />
+              <xs:element name="keyword" type="xs:string" minOccurs="0" />
+              <xs:element name="date_created" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="description" type="xs:string" minOccurs="0" />
+              <xs:element name="author" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="purpose_members_to_purpose">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="purpose__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="purpose__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="filter_connector_container_to_purpose">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="filter_connector__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="purpose__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="condition_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="class_description" type="xs:string" minOccurs="0" />
+              <xs:element name="comments" type="xs:string" minOccurs="0" />
+              <xs:element name="display_name" type="xs:string" minOccurs="0" />
+              <xs:element name="date_last_modified" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="change_log" type="xs:string" minOccurs="0" />
+              <xs:element name="origin" type="xs:string" minOccurs="0" />
+              <xs:element name="keyword" type="xs:string" minOccurs="0" />
+              <xs:element name="date_created" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="description" type="xs:string" minOccurs="0" />
+              <xs:element name="author" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="condition_members_to_condition">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="condition__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="condition__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="filter_connector_container_to_condition">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="filter_connector__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="condition__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_action_to_filter_connector">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="filter_connector__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_conditions_to_condition">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="condition__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_conditions_to_filter_connector">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="filter_connector__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_data_to_data">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="data__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_data_to_filter_connector">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="filter_connector__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_other_party_to_actor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="actor__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_other_party_to_filter_connector">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="filter_connector__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_actor_to_actor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="actor__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_actor_to_filter_connector">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="filter_connector__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_purpose_to_purpose">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="purpose__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_purpose_to_filter_connector">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="filter_connector__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_exceptions_to_information_handling">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="information_handling__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="data_combination_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="class_description" type="xs:string" minOccurs="0" />
+              <xs:element name="comments" type="xs:string" minOccurs="0" />
+              <xs:element name="polarity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="display_name" type="xs:string" minOccurs="0" />
+              <xs:element name="date_last_modified" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="change_log" type="xs:string" minOccurs="0" />
+              <xs:element name="origin" type="xs:string" minOccurs="0" />
+              <xs:element name="date_created" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="statement_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="format_string" type="xs:string" minOccurs="0" />
+              <xs:element name="description" type="xs:string" minOccurs="0" />
+              <xs:element name="author" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="data_combination_conditions_to_condition">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="data_combination__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="condition__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="data_combination_conditions_to_filter_connector">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="data_combination__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="filter_connector__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="data_combination_exceptions_to_information_handling">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="data_combination__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="information_handling__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="data_combination_exceptions_to_data_combination">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="data_combination__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="data_combination__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="data_combination_data_to_data">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="data_combination__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="data__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="data_combination_data_to_filter_connector">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="data_combination__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="filter_connector__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="information_handling_exceptions_to_data_combination">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="information_handling__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="data_combination__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="converse_actions_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="class_description" type="xs:string" minOccurs="0" />
+              <xs:element name="comments" type="xs:string" minOccurs="0" />
+              <xs:element name="display_name" type="xs:string" minOccurs="0" />
+              <xs:element name="date_last_modified" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="change_log" type="xs:string" minOccurs="0" />
+              <xs:element name="origin" type="xs:string" minOccurs="0" />
+              <xs:element name="date_created" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="statement_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="format_string" type="xs:string" minOccurs="0" />
+              <xs:element name="description" type="xs:string" minOccurs="0" />
+              <xs:element name="author" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="converse_actions_actions_to_action">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="converse_actions__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="action__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="converse_actions_actions_to_filter_connector">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="converse_actions__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="filter_connector__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="precedence_">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="class_description" type="xs:string" minOccurs="0" />
+              <xs:element name="comments" type="xs:string" minOccurs="0" />
+              <xs:element name="display_name" type="xs:string" minOccurs="0" />
+              <xs:element name="date_last_modified" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="change_log" type="xs:string" minOccurs="0" />
+              <xs:element name="origin" type="xs:string" minOccurs="0" />
+              <xs:element name="date_created" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="statement_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="format_string" type="xs:string" minOccurs="0" />
+              <xs:element name="description" type="xs:string" minOccurs="0" />
+              <xs:element name="author" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="precedence_statement_a_to_information_handling">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="precedence__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="information_handling__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="precedence_statement_a_to_data_combination">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="precedence__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="data_combination__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="precedence_statement_b_to_information_handling">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="precedence__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="information_handling__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="precedence_statement_b_to_data_combination">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="precedence__idfrom" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="data_combination__idto" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+              <xs:element name="version" msdata:DataType="System.Guid, mscorlib, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:version" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="constant_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:constant" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="information_handling__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="action__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:action_" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="action_members_to_action_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:action_members_to_action" />
+      <xs:field xpath="mstns:action__idfrom" />
+      <xs:field xpath="mstns:action__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_action_to_action_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_action_to_action" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:action__idto" />
+    </xs:unique>
+    <xs:unique name="filter_connector__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:filter_connector_" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="filter__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:filter_" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="criterion__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:criterion_" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="filter_criteria_to_criterion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:filter_criteria_to_criterion" />
+      <xs:field xpath="mstns:filter__idfrom" />
+      <xs:field xpath="mstns:criterion__idto" />
+    </xs:unique>
+    <xs:unique name="filter_connector_filter_to_filter_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:filter_connector_filter_to_filter" />
+      <xs:field xpath="mstns:filter_connector__idfrom" />
+      <xs:field xpath="mstns:filter__idto" />
+    </xs:unique>
+    <xs:unique name="actor__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:actor_" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="actor_members_to_actor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:actor_members_to_actor" />
+      <xs:field xpath="mstns:actor__idfrom" />
+      <xs:field xpath="mstns:actor__idto" />
+    </xs:unique>
+    <xs:unique name="filter_connector_container_to_actor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_actor" />
+      <xs:field xpath="mstns:filter_connector__idfrom" />
+      <xs:field xpath="mstns:actor__idto" />
+    </xs:unique>
+    <xs:unique name="filter_connector_container_to_action_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_action" />
+      <xs:field xpath="mstns:filter_connector__idfrom" />
+      <xs:field xpath="mstns:action__idto" />
+    </xs:unique>
+    <xs:unique name="data__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:data_" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="data_members_to_data_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:data_members_to_data" />
+      <xs:field xpath="mstns:data__idfrom" />
+      <xs:field xpath="mstns:data__idto" />
+    </xs:unique>
+    <xs:unique name="filter_connector_container_to_data_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_data" />
+      <xs:field xpath="mstns:filter_connector__idfrom" />
+      <xs:field xpath="mstns:data__idto" />
+    </xs:unique>
+    <xs:unique name="purpose__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:purpose_" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="purpose_members_to_purpose_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:purpose_members_to_purpose" />
+      <xs:field xpath="mstns:purpose__idfrom" />
+      <xs:field xpath="mstns:purpose__idto" />
+    </xs:unique>
+    <xs:unique name="filter_connector_container_to_purpose_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_purpose" />
+      <xs:field xpath="mstns:filter_connector__idfrom" />
+      <xs:field xpath="mstns:purpose__idto" />
+    </xs:unique>
+    <xs:unique name="condition__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:condition_" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="condition_members_to_condition_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:condition_members_to_condition" />
+      <xs:field xpath="mstns:condition__idfrom" />
+      <xs:field xpath="mstns:condition__idto" />
+    </xs:unique>
+    <xs:unique name="filter_connector_container_to_condition_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_condition" />
+      <xs:field xpath="mstns:filter_connector__idfrom" />
+      <xs:field xpath="mstns:condition__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_action_to_filter_connector_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_action_to_filter_connector" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_conditions_to_condition_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_conditions_to_condition" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:condition__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_conditions_to_filter_connector_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_conditions_to_filter_connector" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_data_to_data_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_data_to_data" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:data__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_data_to_filter_connector_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_data_to_filter_connector" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_other_party_to_actor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_other_party_to_actor" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:actor__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_other_party_to_filter_connector_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_other_party_to_filter_connector" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_actor_to_actor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_actor_to_actor" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:actor__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_actor_to_filter_connector_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_actor_to_filter_connector" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_purpose_to_purpose_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_purpose_to_purpose" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:purpose__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_purpose_to_filter_connector_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_purpose_to_filter_connector" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_exceptions_to_information_handling_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_exceptions_to_information_handling" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:information_handling__idto" />
+    </xs:unique>
+    <xs:unique name="data_combination__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:data_combination_" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="data_combination_conditions_to_condition_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:data_combination_conditions_to_condition" />
+      <xs:field xpath="mstns:data_combination__idfrom" />
+      <xs:field xpath="mstns:condition__idto" />
+    </xs:unique>
+    <xs:unique name="data_combination_conditions_to_filter_connector_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:data_combination_conditions_to_filter_connector" />
+      <xs:field xpath="mstns:data_combination__idfrom" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:unique>
+    <xs:unique name="data_combination_exceptions_to_information_handling_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:data_combination_exceptions_to_information_handling" />
+      <xs:field xpath="mstns:data_combination__idfrom" />
+      <xs:field xpath="mstns:information_handling__idto" />
+    </xs:unique>
+    <xs:unique name="data_combination_exceptions_to_data_combination_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:data_combination_exceptions_to_data_combination" />
+      <xs:field xpath="mstns:data_combination__idfrom" />
+      <xs:field xpath="mstns:data_combination__idto" />
+    </xs:unique>
+    <xs:unique name="data_combination_data_to_data_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:data_combination_data_to_data" />
+      <xs:field xpath="mstns:data_combination__idfrom" />
+      <xs:field xpath="mstns:data__idto" />
+    </xs:unique>
+    <xs:unique name="data_combination_data_to_filter_connector_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:data_combination_data_to_filter_connector" />
+      <xs:field xpath="mstns:data_combination__idfrom" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:unique>
+    <xs:unique name="information_handling_exceptions_to_data_combination_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:information_handling_exceptions_to_data_combination" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+      <xs:field xpath="mstns:data_combination__idto" />
+    </xs:unique>
+    <xs:unique name="converse_actions__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:converse_actions_" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="converse_actions_actions_to_action_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:converse_actions_actions_to_action" />
+      <xs:field xpath="mstns:converse_actions__idfrom" />
+      <xs:field xpath="mstns:action__idto" />
+    </xs:unique>
+    <xs:unique name="converse_actions_actions_to_filter_connector_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:converse_actions_actions_to_filter_connector" />
+      <xs:field xpath="mstns:converse_actions__idfrom" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:unique>
+    <xs:unique name="precedence__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:precedence_" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="precedence_statement_a_to_information_handling_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:precedence_statement_a_to_information_handling" />
+      <xs:field xpath="mstns:precedence__idfrom" />
+      <xs:field xpath="mstns:information_handling__idto" />
+    </xs:unique>
+    <xs:unique name="precedence_statement_a_to_data_combination_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:precedence_statement_a_to_data_combination" />
+      <xs:field xpath="mstns:precedence__idfrom" />
+      <xs:field xpath="mstns:data_combination__idto" />
+    </xs:unique>
+    <xs:unique name="precedence_statement_b_to_information_handling_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:precedence_statement_b_to_information_handling" />
+      <xs:field xpath="mstns:precedence__idfrom" />
+      <xs:field xpath="mstns:information_handling__idto" />
+    </xs:unique>
+    <xs:unique name="precedence_statement_b_to_data_combination_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:precedence_statement_b_to_data_combination" />
+      <xs:field xpath="mstns:precedence__idfrom" />
+      <xs:field xpath="mstns:data_combination__idto" />
+    </xs:unique>
+    <xs:keyref name="version__precedence_statement_b_to_data_combination" refer="Constraint1">
+      <xs:selector xpath=".//mstns:precedence_statement_b_to_data_combination" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="precedence_statement_b_to_data_combination__To__data_combination_" refer="data_combination__Constraint1">
+      <xs:selector xpath=".//mstns:precedence_statement_b_to_data_combination" />
+      <xs:field xpath="mstns:data_combination__idto" />
+    </xs:keyref>
+    <xs:keyref name="precedence_statement_b_to_data_combination__From__precedence_" refer="precedence__Constraint1">
+      <xs:selector xpath=".//mstns:precedence_statement_b_to_data_combination" />
+      <xs:field xpath="mstns:precedence__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__precedence_statement_b_to_information_handling" refer="Constraint1">
+      <xs:selector xpath=".//mstns:precedence_statement_b_to_information_handling" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="precedence_statement_b_to_information_handling__To__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:precedence_statement_b_to_information_handling" />
+      <xs:field xpath="mstns:information_handling__idto" />
+    </xs:keyref>
+    <xs:keyref name="precedence_statement_b_to_information_handling__From__precedence_" refer="precedence__Constraint1">
+      <xs:selector xpath=".//mstns:precedence_statement_b_to_information_handling" />
+      <xs:field xpath="mstns:precedence__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__precedence_statement_a_to_data_combination" refer="Constraint1">
+      <xs:selector xpath=".//mstns:precedence_statement_a_to_data_combination" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="precedence_statement_a_to_data_combination__To__data_combination_" refer="data_combination__Constraint1">
+      <xs:selector xpath=".//mstns:precedence_statement_a_to_data_combination" />
+      <xs:field xpath="mstns:data_combination__idto" />
+    </xs:keyref>
+    <xs:keyref name="precedence_statement_a_to_data_combination__From__precedence_" refer="precedence__Constraint1">
+      <xs:selector xpath=".//mstns:precedence_statement_a_to_data_combination" />
+      <xs:field xpath="mstns:precedence__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__precedence_statement_a_to_information_handling" refer="Constraint1">
+      <xs:selector xpath=".//mstns:precedence_statement_a_to_information_handling" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="precedence_statement_a_to_information_handling__To__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:precedence_statement_a_to_information_handling" />
+      <xs:field xpath="mstns:information_handling__idto" />
+    </xs:keyref>
+    <xs:keyref name="precedence_statement_a_to_information_handling__From__precedence_" refer="precedence__Constraint1">
+      <xs:selector xpath=".//mstns:precedence_statement_a_to_information_handling" />
+      <xs:field xpath="mstns:precedence__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__precedence_" refer="Constraint1">
+      <xs:selector xpath=".//mstns:precedence_" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="version__converse_actions_actions_to_filter_connector" refer="Constraint1">
+      <xs:selector xpath=".//mstns:converse_actions_actions_to_filter_connector" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="converse_actions_actions_to_filter_connector__To__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:converse_actions_actions_to_filter_connector" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:keyref>
+    <xs:keyref name="converse_actions_actions_to_filter_connector__From__converse_actions_" refer="converse_actions__Constraint1">
+      <xs:selector xpath=".//mstns:converse_actions_actions_to_filter_connector" />
+      <xs:field xpath="mstns:converse_actions__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__converse_actions_actions_to_action" refer="Constraint1">
+      <xs:selector xpath=".//mstns:converse_actions_actions_to_action" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="converse_actions_actions_to_action__To__action_" refer="action__Constraint1">
+      <xs:selector xpath=".//mstns:converse_actions_actions_to_action" />
+      <xs:field xpath="mstns:action__idto" />
+    </xs:keyref>
+    <xs:keyref name="converse_actions_actions_to_action__From__converse_actions_" refer="converse_actions__Constraint1">
+      <xs:selector xpath=".//mstns:converse_actions_actions_to_action" />
+      <xs:field xpath="mstns:converse_actions__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__converse_actions_" refer="Constraint1">
+      <xs:selector xpath=".//mstns:converse_actions_" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_exceptions_to_data_combination" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_exceptions_to_data_combination" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_exceptions_to_data_combination__To__data_combination_" refer="data_combination__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_exceptions_to_data_combination" />
+      <xs:field xpath="mstns:data_combination__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_exceptions_to_data_combination__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_exceptions_to_data_combination" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__data_combination_data_to_filter_connector" refer="Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_data_to_filter_connector" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="data_combination_data_to_filter_connector__To__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_data_to_filter_connector" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:keyref>
+    <xs:keyref name="data_combination_data_to_filter_connector__From__data_combination_" refer="data_combination__Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_data_to_filter_connector" />
+      <xs:field xpath="mstns:data_combination__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__data_combination_data_to_data" refer="Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_data_to_data" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="data_combination_data_to_data__To__data_" refer="data__Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_data_to_data" />
+      <xs:field xpath="mstns:data__idto" />
+    </xs:keyref>
+    <xs:keyref name="data_combination_data_to_data__From__data_combination_" refer="data_combination__Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_data_to_data" />
+      <xs:field xpath="mstns:data_combination__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__data_combination_exceptions_to_data_combination" refer="Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_exceptions_to_data_combination" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="data_combination_exceptions_to_data_combination__To__data_combination_" refer="data_combination__Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_exceptions_to_data_combination" />
+      <xs:field xpath="mstns:data_combination__idto" />
+    </xs:keyref>
+    <xs:keyref name="data_combination_exceptions_to_data_combination__From__data_combination_" refer="data_combination__Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_exceptions_to_data_combination" />
+      <xs:field xpath="mstns:data_combination__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__data_combination_exceptions_to_information_handling" refer="Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_exceptions_to_information_handling" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="data_combination_exceptions_to_information_handling__To__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_exceptions_to_information_handling" />
+      <xs:field xpath="mstns:information_handling__idto" />
+    </xs:keyref>
+    <xs:keyref name="data_combination_exceptions_to_information_handling__From__data_combination_" refer="data_combination__Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_exceptions_to_information_handling" />
+      <xs:field xpath="mstns:data_combination__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__data_combination_conditions_to_filter_connector" refer="Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_conditions_to_filter_connector" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="data_combination_conditions_to_filter_connector__To__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_conditions_to_filter_connector" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:keyref>
+    <xs:keyref name="data_combination_conditions_to_filter_connector__From__data_combination_" refer="data_combination__Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_conditions_to_filter_connector" />
+      <xs:field xpath="mstns:data_combination__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__data_combination_conditions_to_condition" refer="Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_conditions_to_condition" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="data_combination_conditions_to_condition__To__condition_" refer="condition__Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_conditions_to_condition" />
+      <xs:field xpath="mstns:condition__idto" />
+    </xs:keyref>
+    <xs:keyref name="data_combination_conditions_to_condition__From__data_combination_" refer="data_combination__Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_conditions_to_condition" />
+      <xs:field xpath="mstns:data_combination__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__data_combination_" refer="Constraint1">
+      <xs:selector xpath=".//mstns:data_combination_" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_exceptions_to_information_handling" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_exceptions_to_information_handling" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_exceptions_to_information_handling__To__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_exceptions_to_information_handling" />
+      <xs:field xpath="mstns:information_handling__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_exceptions_to_information_handling__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_exceptions_to_information_handling" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_purpose_to_filter_connector" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_purpose_to_filter_connector" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_purpose_to_filter_connector__To__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_purpose_to_filter_connector" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_purpose_to_filter_connector__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_purpose_to_filter_connector" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_purpose_to_purpose" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_purpose_to_purpose" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_purpose_to_purpose__To__purpose_" refer="purpose__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_purpose_to_purpose" />
+      <xs:field xpath="mstns:purpose__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_purpose_to_purpose__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_purpose_to_purpose" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_actor_to_filter_connector" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_actor_to_filter_connector" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_actor_to_filter_connector__To__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_actor_to_filter_connector" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_actor_to_filter_connector__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_actor_to_filter_connector" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_actor_to_actor" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_actor_to_actor" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_actor_to_actor__To__actor_" refer="actor__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_actor_to_actor" />
+      <xs:field xpath="mstns:actor__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_actor_to_actor__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_actor_to_actor" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_other_party_to_filter_connector" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_other_party_to_filter_connector" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_other_party_to_filter_connector__To__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_other_party_to_filter_connector" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_other_party_to_filter_connector__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_other_party_to_filter_connector" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_other_party_to_actor" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_other_party_to_actor" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_other_party_to_actor__To__actor_" refer="actor__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_other_party_to_actor" />
+      <xs:field xpath="mstns:actor__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_other_party_to_actor__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_other_party_to_actor" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_data_to_filter_connector" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_data_to_filter_connector" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_data_to_filter_connector__To__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_data_to_filter_connector" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_data_to_filter_connector__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_data_to_filter_connector" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_data_to_data" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_data_to_data" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_data_to_data__To__data_" refer="data__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_data_to_data" />
+      <xs:field xpath="mstns:data__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_data_to_data__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_data_to_data" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_conditions_to_filter_connector" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_conditions_to_filter_connector" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_conditions_to_filter_connector__To__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_conditions_to_filter_connector" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_conditions_to_filter_connector__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_conditions_to_filter_connector" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_conditions_to_condition" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_conditions_to_condition" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_conditions_to_condition__To__condition_" refer="condition__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_conditions_to_condition" />
+      <xs:field xpath="mstns:condition__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_conditions_to_condition__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_conditions_to_condition" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_action_to_filter_connector" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_action_to_filter_connector" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_action_to_filter_connector__To__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_action_to_filter_connector" />
+      <xs:field xpath="mstns:filter_connector__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_action_to_filter_connector__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_action_to_filter_connector" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__filter_connector_container_to_condition" refer="Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_condition" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="filter_connector_container_to_condition__To__condition_" refer="condition__Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_condition" />
+      <xs:field xpath="mstns:condition__idto" />
+    </xs:keyref>
+    <xs:keyref name="filter_connector_container_to_condition__From__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_condition" />
+      <xs:field xpath="mstns:filter_connector__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__condition_members_to_condition" refer="Constraint1">
+      <xs:selector xpath=".//mstns:condition_members_to_condition" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="condition_members_to_condition__To__condition_" refer="condition__Constraint1">
+      <xs:selector xpath=".//mstns:condition_members_to_condition" />
+      <xs:field xpath="mstns:condition__idto" />
+    </xs:keyref>
+    <xs:keyref name="condition_members_to_condition__From__condition_" refer="condition__Constraint1">
+      <xs:selector xpath=".//mstns:condition_members_to_condition" />
+      <xs:field xpath="mstns:condition__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__condition_" refer="Constraint1">
+      <xs:selector xpath=".//mstns:condition_" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="version__filter_connector_container_to_purpose" refer="Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_purpose" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="filter_connector_container_to_purpose__To__purpose_" refer="purpose__Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_purpose" />
+      <xs:field xpath="mstns:purpose__idto" />
+    </xs:keyref>
+    <xs:keyref name="filter_connector_container_to_purpose__From__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_purpose" />
+      <xs:field xpath="mstns:filter_connector__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__purpose_members_to_purpose" refer="Constraint1">
+      <xs:selector xpath=".//mstns:purpose_members_to_purpose" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="purpose_members_to_purpose__To__purpose_" refer="purpose__Constraint1">
+      <xs:selector xpath=".//mstns:purpose_members_to_purpose" />
+      <xs:field xpath="mstns:purpose__idto" />
+    </xs:keyref>
+    <xs:keyref name="purpose_members_to_purpose__From__purpose_" refer="purpose__Constraint1">
+      <xs:selector xpath=".//mstns:purpose_members_to_purpose" />
+      <xs:field xpath="mstns:purpose__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__purpose_" refer="Constraint1">
+      <xs:selector xpath=".//mstns:purpose_" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="version__filter_connector_container_to_data" refer="Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_data" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="filter_connector_container_to_data__To__data_" refer="data__Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_data" />
+      <xs:field xpath="mstns:data__idto" />
+    </xs:keyref>
+    <xs:keyref name="filter_connector_container_to_data__From__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_data" />
+      <xs:field xpath="mstns:filter_connector__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__data_members_to_data" refer="Constraint1">
+      <xs:selector xpath=".//mstns:data_members_to_data" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="data_members_to_data__To__data_" refer="data__Constraint1">
+      <xs:selector xpath=".//mstns:data_members_to_data" />
+      <xs:field xpath="mstns:data__idto" />
+    </xs:keyref>
+    <xs:keyref name="data_members_to_data__From__data_" refer="data__Constraint1">
+      <xs:selector xpath=".//mstns:data_members_to_data" />
+      <xs:field xpath="mstns:data__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__data_" refer="Constraint1">
+      <xs:selector xpath=".//mstns:data_" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="version__filter_connector_container_to_action" refer="Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_action" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="filter_connector_container_to_action__To__action_" refer="action__Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_action" />
+      <xs:field xpath="mstns:action__idto" />
+    </xs:keyref>
+    <xs:keyref name="filter_connector_container_to_action__From__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_action" />
+      <xs:field xpath="mstns:filter_connector__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__filter_connector_container_to_actor" refer="Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_actor" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="filter_connector_container_to_actor__To__actor_" refer="actor__Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_actor" />
+      <xs:field xpath="mstns:actor__idto" />
+    </xs:keyref>
+    <xs:keyref name="filter_connector_container_to_actor__From__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_container_to_actor" />
+      <xs:field xpath="mstns:filter_connector__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__actor_members_to_actor" refer="Constraint1">
+      <xs:selector xpath=".//mstns:actor_members_to_actor" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="actor_members_to_actor__To__actor_" refer="actor__Constraint1">
+      <xs:selector xpath=".//mstns:actor_members_to_actor" />
+      <xs:field xpath="mstns:actor__idto" />
+    </xs:keyref>
+    <xs:keyref name="actor_members_to_actor__From__actor_" refer="actor__Constraint1">
+      <xs:selector xpath=".//mstns:actor_members_to_actor" />
+      <xs:field xpath="mstns:actor__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__actor_" refer="Constraint1">
+      <xs:selector xpath=".//mstns:actor_" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="version__filter_connector_filter_to_filter" refer="Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_filter_to_filter" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="filter_connector_filter_to_filter__To__filter_" refer="filter__Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_filter_to_filter" />
+      <xs:field xpath="mstns:filter__idto" />
+    </xs:keyref>
+    <xs:keyref name="filter_connector_filter_to_filter__From__filter_connector_" refer="filter_connector__Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_filter_to_filter" />
+      <xs:field xpath="mstns:filter_connector__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__filter_criteria_to_criterion" refer="Constraint1">
+      <xs:selector xpath=".//mstns:filter_criteria_to_criterion" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="filter_criteria_to_criterion__To__criterion_" refer="criterion__Constraint1">
+      <xs:selector xpath=".//mstns:filter_criteria_to_criterion" />
+      <xs:field xpath="mstns:criterion__idto" />
+    </xs:keyref>
+    <xs:keyref name="filter_criteria_to_criterion__From__filter_" refer="filter__Constraint1">
+      <xs:selector xpath=".//mstns:filter_criteria_to_criterion" />
+      <xs:field xpath="mstns:filter__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__criterion_" refer="Constraint1">
+      <xs:selector xpath=".//mstns:criterion_" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="version__filter_" refer="Constraint1">
+      <xs:selector xpath=".//mstns:filter_" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="version__filter_connector_" refer="Constraint1">
+      <xs:selector xpath=".//mstns:filter_connector_" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_action_to_action" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_action_to_action" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_action_to_action__To__action_" refer="action__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_action_to_action" />
+      <xs:field xpath="mstns:action__idto" />
+    </xs:keyref>
+    <xs:keyref name="information_handling_action_to_action__From__information_handling_" refer="information_handling__Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_action_to_action" />
+      <xs:field xpath="mstns:information_handling__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__action_members_to_action" refer="Constraint1">
+      <xs:selector xpath=".//mstns:action_members_to_action" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="action_members_to_action__To__action_" refer="action__Constraint1">
+      <xs:selector xpath=".//mstns:action_members_to_action" />
+      <xs:field xpath="mstns:action__idto" />
+    </xs:keyref>
+    <xs:keyref name="action_members_to_action__From__action_" refer="action__Constraint1">
+      <xs:selector xpath=".//mstns:action_members_to_action" />
+      <xs:field xpath="mstns:action__idfrom" />
+    </xs:keyref>
+    <xs:keyref name="version__action_" refer="Constraint1">
+      <xs:selector xpath=".//mstns:action_" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="version__information_handling_" refer="Constraint1">
+      <xs:selector xpath=".//mstns:information_handling_" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="version__constant" refer="Constraint1">
+      <xs:selector xpath=".//mstns:constant" />
+      <xs:field xpath="mstns:version" />
+    </xs:keyref>
+    <xs:keyref name="previous__version" refer="Constraint1">
+      <xs:selector xpath=".//mstns:version" />
+      <xs:field xpath="mstns:previous" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

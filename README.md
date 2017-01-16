@@ -10,7 +10,26 @@ A fork of the original XSD2DB project started by  Alexis Smirnov,  in 2003 relea
 Generate databases from Microsoft ADO.NET compatible DataSet Schema Files (XSD)
 Supports relations, primary keys, blob fields, memo fields
 
+## Available Parameters
 
+	help (-h)
+		Display usage instructions
+	force (-f)
+		drop the database if it exists.
+	location (-l)
+		The type of database to connect to (servername). When SQL Server is used, the connection is created using Windows Authentication, SQL Authentication is not supported yet.
+	name (-n)
+		the name of the database to be created [version 0.1 does support using an existing database]
+	schema (-s)
+		The the XSD file containing the schema
+	type (-t)
+		The type of database to connect to [ Jet | Sql | OleDb ]
+	tableprefix (-p)
+		This is a prefix added to each table
+	dbowner (-o)
+		prefix added to each table. This parameter is ignored if a database other than SQL Server is used.
+	UseExisting (-e)
+	   Use an existing database
 
 ### Use with Powershell
  ```powershell

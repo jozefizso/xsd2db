@@ -361,6 +361,45 @@
             <returns>the type descriptor corresponding to
             <paramref name="column"/></returns>
         </member>
+        <member name="T:Xsd2Db.Data.Test.Assertion">
+            <summary>
+            Wrapper for NUnit Assert class to provide compatibility
+            for old NUnit API
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.Assertion.Assert(System.Boolean)">
+            <summary>
+            Asserts that a condition is true. If the condition is false the method throws
+            an <see cref="T:NUnit.Framework.AssertionException" />.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.Assertion.Assert(System.String,System.Boolean)">
+            <summary>
+            Asserts that a condition is true. If the condition is false the method throws
+            an <see cref="T:NUnit.Framework.AssertionException" />.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.Assertion.AssertEquals(System.String,System.Int32,System.Int32)">
+            <summary>
+            Verifies that two ints are equal. If they are not, then an
+            <see cref="T:NUnit.Framework.AssertionException" /> is thrown.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.Assertion.AssertEquals(System.String,System.Object,System.Object)">
+            <summary>
+            Verifies that two objects are equal.  Two objects are considered
+            equal if both are null, or if both have the same value. NUnit
+            has special semantics for some object types.
+            If they are not equal an <see cref="T:NUnit.Framework.AssertionException" /> is thrown.
+            </summary>
+        </member>
+        <member name="M:Xsd2Db.Data.Test.Assertion.AssertNotNull(System.String,System.Object)">
+            <summary>
+            Verifies that the object that is passed in is not equal to <code>null</code>
+            If the object is <code>null</code> then an <see cref="T:NUnit.Framework.AssertionException" />
+            is thrown.
+            </summary>
+        </member>
         <member name="T:Xsd2Db.Data.Test.Common">
             <summary>
             Summary description for BaseTest.

@@ -300,14 +300,9 @@ namespace Xsd2Db.Data.Test
 			DataSchemaAdapter creator = new SqlDataSchemaAdapter(this.Host);
 			DataSet dataSet = new DataSet(this.Catalog);
 
-			NameValueCollection config = (NameValueCollection) ConfigurationSettings.GetConfig("Xsd2Db.Data.Test");
-			string xsdFile = null;
-			if (config != null)
-			{
-				xsdFile = config["ObjectModelXsd"];
-			}
+			string xsdFile = ConfigurationManager.AppSettings["Test.ObjectModelXsd"];
 			if (xsdFile == null || xsdFile.Length == 0)
-				xsdFile = "../../Common/DataSchemaAdapter/Test/ObjectModel.xsd";
+				xsdFile = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Test\ObjectModel.xsd");
 
 			dataSet.ReadXmlSchema(xsdFile);
 			dataSet.DataSetName = this.Catalog;

@@ -68,11 +68,10 @@ namespace Xsd2Db.Data.Test
 		/// definition script for a null data set.
 		/// </summary>
 		[Test]
-		[ExpectedException(typeof (ArgumentNullException))]
 		public void TestNullDataSet()
 		{
 			DataSchemaAdapter creator = new JetDataSchemaAdapter();
-			creator.Create((DataSet) null, false);
+			Assert.Throws<ArgumentNullException>(() => creator.Create((DataSet) null, false));
 		}
 
 		/// <summary>
@@ -80,11 +79,10 @@ namespace Xsd2Db.Data.Test
 		/// definition script for an unnamed data set.
 		/// </summary>
 		[Test]
-		[ExpectedException(typeof (ArgumentException))]
 		public void TestUnnamedDataSet()
 		{
 			DataSchemaAdapter creator = new JetDataSchemaAdapter();
-			creator.Create(new DataSet(String.Empty), false);
+			Assert.Throws<ArgumentException>(() => creator.Create(new DataSet(String.Empty), false));
 		}
 
 		/// <summary>

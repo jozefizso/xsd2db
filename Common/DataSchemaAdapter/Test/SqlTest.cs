@@ -100,11 +100,12 @@ namespace Xsd2Db.Data.Test
 		/// creation script for a null database name.
 		/// </summary>
 		[Test]
-		[ExpectedException(typeof (ArgumentException))]
 		public void TestNullName()
 		{
 			string name = null;
-			string s = new SqlDataSchemaAdapter(Host).GetCreateScript(name, false);
+
+			SqlDataSchemaAdapter adapter = new SqlDataSchemaAdapter(Host);
+			Assert.Throws<ArgumentException>(() => adapter.GetCreateScript(name, false));
 		}
 
 		/// <summary>
@@ -112,11 +113,11 @@ namespace Xsd2Db.Data.Test
 		/// creation script for a zero-length database name.
 		/// </summary>
 		[Test]
-		[ExpectedException(typeof (ArgumentException))]
 		public void TestEmptyName()
 		{
 			string name = "";
-			string s = new SqlDataSchemaAdapter(Host).GetCreateScript(name, false);
+			SqlDataSchemaAdapter adapter = new SqlDataSchemaAdapter(Host);
+			Assert.Throws<ArgumentException>(() => adapter.GetCreateScript(name, false));
 		}
 
 		/// <summary>
@@ -125,11 +126,11 @@ namespace Xsd2Db.Data.Test
 		/// non-whitespace characters.
 		/// </summary>
 		[Test]
-		[ExpectedException(typeof (ArgumentException))]
 		public void TestContentFreeName()
 		{
 			string name = "    ";
-			string s = new SqlDataSchemaAdapter(Host).GetCreateScript(name, false);
+			SqlDataSchemaAdapter adapter = new SqlDataSchemaAdapter(Host);
+			Assert.Throws<ArgumentException>(() => adapter.GetCreateScript(name, false));
 		}
 
 		/// <summary>
@@ -137,11 +138,11 @@ namespace Xsd2Db.Data.Test
 		/// definition script for a null data set.
 		/// </summary>
 		[Test]
-		[ExpectedException(typeof (ArgumentException))]
 		public void TestNullDataSet()
 		{
 			DataSet ds = null;
-			string s = new SqlDataSchemaAdapter(Host).GetSchemaScript(ds);
+			SqlDataSchemaAdapter adapter = new SqlDataSchemaAdapter(Host);
+			Assert.Throws<ArgumentException>(() => adapter.GetSchemaScript(ds));
 		}
 
 		/// <summary>
@@ -150,13 +151,13 @@ namespace Xsd2Db.Data.Test
 		/// no columns.
 		/// </summary>
 		[Test]
-		[ExpectedException(typeof (ArgumentException))]
 		public void TestNoColumns1()
 		{
 			DataSet ds = new DataSet("TestNoColumns");
 			ds.Tables.Add("empty_table");
 
-			string s = new SqlDataSchemaAdapter(Host).GetSchemaScript(ds);
+			SqlDataSchemaAdapter adapter = new SqlDataSchemaAdapter(Host);
+			Assert.Throws<ArgumentException>(() => adapter.GetSchemaScript(ds));
 		}
 
 		/// <summary>
@@ -165,7 +166,6 @@ namespace Xsd2Db.Data.Test
 		/// no columns.  The schema is loaded from a file.
 		/// </summary>
 		[Test]
-		[ExpectedException(typeof (ArgumentException))]
 		public void TestNoColumns2()
 		{
 			string name = "TestNoColumns2";
@@ -179,7 +179,9 @@ namespace Xsd2Db.Data.Test
 				ds.Dispose();
 				ds = new DataSet();
 				ds.ReadXmlSchema(file);
-				string s = new SqlDataSchemaAdapter(Host).GetSchemaScript(ds);
+
+				SqlDataSchemaAdapter adapter = new SqlDataSchemaAdapter(Host);
+				Assert.Throws<ArgumentException>(() => adapter.GetSchemaScript(ds));
 			}
 			finally
 			{

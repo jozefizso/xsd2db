@@ -23,23 +23,17 @@ namespace Xsd2Db.Data.Test
 		public SqlTest()
 			: base("sql_test")
 		{
-			NameValueCollection config = (NameValueCollection) ConfigurationSettings.GetConfig("Xsd2Db.Data.Test");
-			string host = null;
-
-			if (config != null)
+			string host = ConfigurationManager.AppSettings["Test.SqlHost"];
+			if (!String.IsNullOrEmpty(host))
 			{
-				host = config["SqlHost"];
-				if (host != null && host.Length > 0)
-				{
-					this.Host = host;
-				}
+				this.Host = host;
 			}
 		}
 
 		/// <summary>
 		/// The database host on which all of the tests will be performed.
 		/// </summary>
-		public string Host = @"(local)\VSDOTNET";
+		public string Host = @".\SQLExpress";
 
 		/// <summary>
 		/// 

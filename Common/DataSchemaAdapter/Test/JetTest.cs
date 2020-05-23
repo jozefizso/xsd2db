@@ -203,9 +203,9 @@ namespace Xsd2Db.Data.Test
 			DataSchemaAdapter creator = new JetDataSchemaAdapter();
 			DataSet dataSet = new DataSet(this.Catalog);
 
-			string xsdFile = ((NameValueCollection) ConfigurationSettings.GetConfig("Xsd2Db.Data.Test"))["ObjectModelXsd"];
+			string xsdFile = ConfigurationManager.AppSettings["Test.ObjectModelXsd"];
 			if (xsdFile == null || xsdFile.Length == 0)
-				xsdFile = "../Common/DataSchemaAdapter/Test/ObjectModel.xsd";
+				xsdFile = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Test\ObjectModel.xsd");
 
 			dataSet.ReadXmlSchema(xsdFile);
 			dataSet.DataSetName = this.Catalog;

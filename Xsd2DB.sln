@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 16.0.29509.3
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xsd2DB", "Tools\xsd2db\Xsd2DB.csproj", "{284B1392-B457-428C-A4D8-E5E17008D841}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandLineParser", "Common\CommandLineParser\CommandLineParser.csproj", "{724981C0-1B2C-4883-B778-0CB43B293354}"
